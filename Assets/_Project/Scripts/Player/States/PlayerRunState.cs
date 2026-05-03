@@ -21,7 +21,8 @@ public class PlayerRunState : PlayerBaseState
             return;
         }
 
-        // двигаем через Rigidbody чтобы не конфликтовать с физикой
+        StateMachine.FlipPlayer(moveInput); // разворачиваем игрока
+
         StateMachine.Rigidbody.linearVelocity = new Vector2(
             moveInput * StateMachine.MoveSpeed,
             StateMachine.Rigidbody.linearVelocity.y

@@ -50,4 +50,11 @@ public class PlayerStateMachine : MonoBehaviour
             _groundLayer
         );
     }
+    public void FlipPlayer(float moveInput)
+    {
+        if (moveInput > 0)
+            transform.localScale = new Vector3(1, 1, 1);
+        else if (moveInput < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
+    }
 }
