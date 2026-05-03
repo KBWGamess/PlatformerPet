@@ -6,6 +6,9 @@ public class PlayerStateMachine : MonoBehaviour
 
     private PlayerBaseState _currentState;
 
+    [SerializeField] private float _moveSpeed = 5f;
+    public float MoveSpeed => _moveSpeed;
+
     private void Awake()
     {
         Rigidbody = GetComponent<Rigidbody2D>();

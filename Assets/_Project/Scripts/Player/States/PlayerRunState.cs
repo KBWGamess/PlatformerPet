@@ -13,11 +13,19 @@ public class PlayerRunState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-        if (Input.GetAxisRaw("Horizontal") == 0)
+        float moveInput = Input.GetAxisRaw("Horizontal");
+
+        if (moveInput == 0)
         {
             StateMachine.ChangeState(new PlayerIdleState(StateMachine));
             return;
         }
+
+        // двигаем через Rigidbody чтобы не конфликтовать с физикой
+        StateMachine.Rigidbody.linearVelocity = new Vector2(
+            moveInput * StateMachine.MoveSpeed,
+            StateMachine.Rigidbody.linearVelocity.y
+        );
 
         if (Input.GetButtonDown("Jump"))
         {
