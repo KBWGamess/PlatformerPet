@@ -25,6 +25,12 @@ public class PlayerFallState : PlayerBaseState
             StateMachine.ChangeState(new PlayerIdleState(StateMachine));
             return;
         }
+
+        if (StateMachine.IsGrounded)
+        {
+            StateMachine.ChangeState(new PlayerIdleState(StateMachine));
+            return;
+        }
     }
 
     public override void Exit()

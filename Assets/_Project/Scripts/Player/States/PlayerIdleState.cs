@@ -9,6 +9,7 @@ public class PlayerIdleState : PlayerBaseState
     public override void Enter()
     {
         // Анимация Idle
+        StateMachine.CoyoteTimeCounter = StateMachine.CoyoteTime;
     }
 
     public override void Tick(float deltaTime)
@@ -21,6 +22,11 @@ public class PlayerIdleState : PlayerBaseState
         if (Input.GetButtonDown("Jump"))
         {
             StateMachine.ChangeState(new PlayerJumpState(StateMachine));
+        }
+
+        if (!StateMachine.IsGrounded)
+        {
+            StateMachine.ChangeState(new PlayerFallState(StateMachine));
         }
     }
 
