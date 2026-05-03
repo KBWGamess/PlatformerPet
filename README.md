@@ -45,5 +45,5 @@ Pet project демонстрирующий знание архитектуры и Unity в рамках портфолио.
 
 ## јвтор
 
-KBWGamess Ч Unity Developer (Junior)
+KBWGamess Ч Unity Developer 
 GitHub: https://github.com/KBWGamess
