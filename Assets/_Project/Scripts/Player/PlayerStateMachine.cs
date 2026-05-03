@@ -7,7 +7,10 @@ public class PlayerStateMachine : MonoBehaviour
     private PlayerBaseState _currentState;
 
     [SerializeField] private float _moveSpeed = 5f;
+    [SerializeField] private float _jumpForce = 15f;
+
     public float MoveSpeed => _moveSpeed;
+    public float JumpForce => _jumpForce;
 
     private void Awake()
     {

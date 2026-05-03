@@ -17,6 +17,11 @@ public class PlayerIdleState : PlayerBaseState
         {
             StateMachine.ChangeState(new PlayerRunState(StateMachine));
         }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            StateMachine.ChangeState(new PlayerJumpState(StateMachine));
+        }
     }
 
     public override void Exit()
